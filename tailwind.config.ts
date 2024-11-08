@@ -13,6 +13,8 @@ const config: Config = {
       colors: {
         success: "#008B5D",
         heading: "#14141F",
+        grayB: "#E3E3E4",
+        textGray: "#4C4C55",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
