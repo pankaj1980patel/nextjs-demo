@@ -15,6 +15,31 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Folder Structure Overview
+This project follows a structured folder organization to maintain clarity and scalability. Here's an overview of the key folders and their contents:
+
+public/
+Contains static files that are directly accessible by the browser.
+
+fonts/: Stores custom fonts used in the project.
+icons/: Contains icon assets used across the application.
+users/: Stores user-specific data or images, such as avatars or other user-generated content.
+src/
+This is the main source directory where the application logic resides.
+
+app/: Contains the main application code. This is where your pages, routing, and app-specific logic can be found.
+
+components/: Includes reusable UI components and other smaller pieces of the interface.
+
+Sidebar/: Contains the sidebar component used in the app.
+ui/: Houses general UI components (buttons, modals, etc.) that can be used across various pages and features.
+feature/: Organizes features into dedicated subfolders. Each feature can have its own set of components, services, and logic.
+
+accountSetting/: Contains the account settings feature and related components.
+components/: Holds the specific components used within the account settings feature.
+hooks/: Stores custom React hooks that encapsulate reusable logic, such as data fetching, state management, etc.
+
+lib/: Includes utility libraries and functions that can be imported across the app, such as API clients, configuration files, and helper functions.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
