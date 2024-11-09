@@ -1,12 +1,7 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import {
-  ArrowLeftCircle,
-  ArrowRightCircle,
-  ChevronsLeft,
-  X,
-} from "lucide-react";
+import { ChevronsLeft } from "lucide-react";
 
 // SideMenuHeader
 export type SideBarHeaderProps = {
@@ -86,7 +81,11 @@ export const SideMenuItem: React.FC<SideMenuItemProps> = ({
     >
       {icon}
       <p
-        className={cn("truncate w-full ", variantClass[variant], classNameLabel)}
+        className={cn(
+          "truncate w-full ",
+          variantClass[variant],
+          classNameLabel
+        )}
         {...labelProps}
       >
         {label}

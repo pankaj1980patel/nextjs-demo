@@ -7,7 +7,6 @@ import {
 } from "@/components/Sidebar/MenuComponents";
 import {
   ArrowRight,
-  ArrowRightCircle,
   FileText,
   PlusCircle,
   Presentation,
@@ -17,7 +16,6 @@ import {
 import { SIDEBAR_BOARD_ITEMS, SIDEBAR_ITEMS } from "./constant";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import Image from "next/image";
-import { X } from "lucide-react"; // Icon to close the sidebar on mobile
 
 type SidebarProps = {
   className?: string;

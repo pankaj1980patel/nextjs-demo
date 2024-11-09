@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import FloatingLabelInput from "@/components/FloatingLabelInput";
 import { Checkbox } from "@/components/ui/checkbox";
 import Link from "next/link";
+import { useToast } from "@/hooks/use-toast";
 
 type FormValues = {
   firstName: string;
@@ -38,6 +39,7 @@ const PersonalInformationForm: React.FC<PersonalInformationFormProps> = ({
   className,
   ...props
 }) => {
+  const { toast } = useToast();
   // React Hook Form
   const {
     register,
@@ -61,6 +63,14 @@ const PersonalInformationForm: React.FC<PersonalInformationFormProps> = ({
   // Function to handle form submission
   const onSubmit = (data: FormValues) => {
     console.log(data); // Replace with actual form handling logic
+    toast({
+      title: "You submitted the following values:",
+      description: (
+        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+          <code className="text-white">{JSON.stringify(data, null, 2)}</code>
+        </pre>
+      ),
+    });
   };
 
   const inputFields = [
