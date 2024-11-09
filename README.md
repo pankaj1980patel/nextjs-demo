@@ -15,16 +15,16 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-Folder Structure Overview
+## Folder Structure Overview
 This project follows a structured folder organization to maintain clarity and scalability. Here's an overview of the key folders and their contents:
 
-public/
+```public/```
 Contains static files that are directly accessible by the browser.
 
-fonts/: Stores custom fonts used in the project.
-icons/: Contains icon assets used across the application.
-users/: Stores user-specific data or images, such as avatars or other user-generated content.
-src/
+```fonts/```: Stores custom fonts used in the project.
+```icons/```: Contains icon assets used across the application.
+```users/```: Stores user-specific data or images, such as avatars or other user-generated content.
+```src/```
 This is the main source directory where the application logic resides.
 
 app/: Contains the main application code. This is where your pages, routing, and app-specific logic can be found.
