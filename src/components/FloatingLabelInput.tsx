@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, forwardRef } from "react";
 import { cn } from "@/lib/utils";
 import { FieldError } from "react-hook-form";
 
@@ -11,14 +11,11 @@ export type FloatingLabelInputProps =
     error?: FieldError;
   };
 
-export default function FloatingLabelInput({
-  label,
-  className,
-  classNameContainer,
-  error,
-  ...props
-}: FloatingLabelInputProps) {
-  const inputRef = useRef<HTMLInputElement>(null);
+const FloatingLabelInput = forwardRef<
+  HTMLInputElement,
+  FloatingLabelInputProps
+>(({ label, className, classNameContainer, error, ...props }, ref) => {
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
   const focusInput = () => {
     inputRef.current?.focus();
@@ -37,7 +34,14 @@ export default function FloatingLabelInput({
       >
         <input
           {...props}
-          ref={inputRef}
+          ref={(e) => {
+            if (typeof ref === "function") {
+              ref(e);
+            } else if (ref) {
+              ref.current = e;
+            }
+            inputRef.current = e;
+          }} // Pass down the ref from forwardRef
           className={cn(
             "peer w-full bg-transparent py-1 text-gray-900 placeholder-transparent focus:outline-none",
             className
@@ -60,4 +64,8 @@ export default function FloatingLabelInput({
       {error && <p className="mt-1 text-sm text-red-500">{error.message}</p>}
     </div>
   );
-}
+});
+
+FloatingLabelInput.displayName = "FloatingLabelInput"; // Set displayName for clarity
+
+export default FloatingLabelInput;

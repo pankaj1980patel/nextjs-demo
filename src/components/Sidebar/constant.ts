@@ -20,7 +20,7 @@ export const SIDEBAR_ITEMS = [
     items: [
       "Past search 1",
       "Past search 2",
-      "Computers and information...",
+      "Computers and information",
       "Database Administrator",
       "Computer security",
       "Computer Systems Analyst",

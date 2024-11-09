@@ -19,7 +19,9 @@ const DeleteAccount: React.FC<DeleteAccountProps> = ({
         If you delete your account you’ll be permanently removing it from our
         systems - you can’t undo it.
       </p>
-      <button className="text-red-500 font-semibold mt-4">Yes, Delete my account</button>
+      <button className="text-red-500 font-semibold mt-4 hover:text-red-600">
+        Yes, Delete my account
+      </button>
     </div>
   );
 };

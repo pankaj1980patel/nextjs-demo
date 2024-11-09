@@ -13,7 +13,7 @@ const PremiumAccount: React.FC<PremiumAccountProps> = ({
   return (
     <div
       className={cn(
-        "flex gap-4 items-center p-6 rounded-md bg-success text-white",
+        "flex gap-4 items-center p-6 rounded-md bg-success text-white flex-col md:flex-row",
         className
       )}
       {...props}

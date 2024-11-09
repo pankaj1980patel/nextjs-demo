@@ -17,20 +17,19 @@ const LINKS = [
 ];
 const Footer: React.FC<FooterProps> = ({ className, ...props }) => {
   return (
-    <div className={cn("", className)} {...props}>
+    <div className={cn("font-medium", className)} {...props}>
       <p>
-        Get in touch with our support team if you have any question or want to
-        leave some feedback.
+        <Link href="#" className="text-blue-500">
+          {" "}
+          Get in touch with our support team
+        </Link>{" "}
+        if you have any question or want to leave some feedback.
       </p>
       <p>We’ll be happy to hear from you.</p>
       <div className="border-t my-4"></div>
-      <div className="flex gap-8">
-        {LINKS.map((link) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            className="text-textGray font-light"
-          >
+      <div className="flex gap-8 font-light text-textGray">
+        {LINKS.map((link, index) => (
+          <Link key={index} href={link.href}>
             {link.label}
           </Link>
         ))}

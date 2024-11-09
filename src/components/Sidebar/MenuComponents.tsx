@@ -1,20 +1,30 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import {
+  ArrowLeftCircle,
+  ArrowRightCircle,
+  ChevronsLeft,
+  X,
+} from "lucide-react";
 
-// SideBarHeader
+// SideMenuHeader
 export type SideBarHeaderProps = {
   className?: string;
+  isOpen: boolean;
+  handleOpenChange: (open: boolean) => void;
 } & React.ComponentProps<"div">;
 
-export const SideBarHeader: React.FC<SideBarHeaderProps> = ({
+export const SideMenuHeader: React.FC<SideBarHeaderProps> = ({
   className,
+  isOpen,
+  handleOpenChange,
   ...props
 }) => {
   return (
     <div
       className={cn(
-        "flex item-center gap-1 border-b border-inherit py-3 px-2",
+        "flex item-center gap-1 border-b border-inherit py-3 px-2 relative",
         className
       )}
       {...props}
@@ -27,11 +37,20 @@ export const SideBarHeader: React.FC<SideBarHeaderProps> = ({
         height={24}
       />
       <p className="">Resumizeme</p>
+
+      {/* Close button for mobile */}
+
+      <button
+        onClick={() => handleOpenChange(false)}
+        className="md:hidden absolute top-1/2 transform -translate-y-1/2 right-4 hover:bg-zinc-100 rounded-full p-1"
+      >
+        <ChevronsLeft className="text-gray-700" width={18} height={18} />
+      </button>
     </div>
   );
 };
 
-// SideBarHeader Ends
+// SideMenuHeader Ends
 
 // SideBar MenuItem
 
@@ -67,7 +86,7 @@ export const SideMenuItem: React.FC<SideMenuItemProps> = ({
     >
       {icon}
       <p
-        className={cn("", variantClass[variant], classNameLabel)}
+        className={cn("truncate w-full ", variantClass[variant], classNameLabel)}
         {...labelProps}
       >
         {label}
